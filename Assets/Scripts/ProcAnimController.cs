@@ -58,9 +58,9 @@ public class ProcAnimController : MonoBehaviour
         }
     }
     void updateTargetIKTransform() {
-        targetIK.position = currTarget;
-        Vector3 orient = Vector3.Cross(-hit.normal, targetIK.forward);
-        targetIK.up = -Vector3.up;
+        targetIK.position = currTarget + targetOffset;
+        Vector3 orient = Vector3.Cross(hit.normal, targetIK.forward);
+        targetIK.up = -hit.normal;
     }
 
     private void OnDrawGizmos() {
