@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class ProcAnimController : MonoBehaviour
 {
@@ -18,11 +19,12 @@ public class ProcAnimController : MonoBehaviour
     void Start()
     {
     //    castPoint= transform.position + downwardCastOffset;
+        DOTween.Init();
     }
 
     // Update is called once per frame
     RaycastHit hit;
-    void FixedUpdate()
+    void Update()
     {
         if (!hasInitialHit) {
             updateHit();
@@ -58,7 +60,7 @@ public class ProcAnimController : MonoBehaviour
         }
     }
     void updateTargetIKTransform() {
-        targetIK.position = currTarget + targetOffset;
+        targetIK.DOMove(currTarget + targetOffset, 0.2f).SetEase(Ease.InQuad);
         Vector3 orient = Vector3.Cross(hit.normal, targetIK.forward);
         targetIK.up = -hit.normal;
     }
