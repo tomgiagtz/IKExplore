@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundTarget : MonoBehaviour
+public class GroundFinger: MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform body;
-
+    public ArmProcAnimController arm;
     public LayerMask isGround;
     public float heightOffset = 0.1f;
 
     // Update is called once per frame
-    void Update()
+    private void Update() {
+        if (!arm.IsMoving()) {
+            CastRay();  
+        }
+    }
+    void CastRay()
     {
         RaycastHit hit;
         Vector3 castPoint = new Vector3(transform.position.x, body.position.y, transform.position.z);

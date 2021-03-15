@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class ArmProcAnimController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public LayerMask isGround;
-    
+    // Start is called before the first frame update    
     public Transform targetIK;
     public Transform body;
     public ArmProcAnimController oppositeArm;
 
     public float stepRadius = 0.3f;
     public float stepLength = 1f;
-    float stepHeight = 0.1f; 
-    public bool isGrounded;
-    public bool VERBOSE = false;
+    float stepHeight = 0.2f; 
     public float speed = 1;
     
     
@@ -48,7 +44,7 @@ public class ArmProcAnimController : MonoBehaviour
         // }
         float targetToGroundDistance = Vector3.Distance(newPosition, targetPoint.position);
         float thisToTargetDistance = Vector3.Distance(targetIK.position, transform.position);
-        if (VERBOSE) Debug.Log(targetToGroundDistance);
+        // if (VERBOSE) Debug.Log(targetToGroundDistance);
         // if (VERBOSE) Debug.Log(thisToTargetDistance);
 
         if (targetToGroundDistance > stepRadius && lerp >= 1f && !oppositeArm.IsMoving()) {
