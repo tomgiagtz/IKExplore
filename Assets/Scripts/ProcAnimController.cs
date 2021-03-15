@@ -54,7 +54,6 @@ public class ProcAnimController : MonoBehaviour
             currTarget = hit.point;
             currTarget = hit.point;
             Debug.DrawRay(castStart, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
-            Debug.Log("Did Hit");
            updateTargetIKTransform();
         }
         else
