@@ -1087,11 +1087,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   targetIK: {fileID: 3900715654063761214}
-  shouldUpdateTarget: 0
+  body: {fileID: 0}
   stepRadius: 0.3
-  repulseRadius: 0
+  stepLength: 1
   isGrounded: 0
-  VERBOSE: 0
+  VERBOSE: 1
+  speed: 1
+  footOffset: {x: 0, y: 0, z: 0}
   targetPoint: {fileID: 0}
 --- !u!1 &3900715653789943743
 GameObject:
