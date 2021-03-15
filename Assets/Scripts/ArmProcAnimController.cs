@@ -121,7 +121,7 @@ public class ArmProcAnimController : MonoBehaviour
         Gizmos.DrawSphere(targetPoint.position, 0.2f);
 
         Gizmos.color = Color.blue;
-        Gizmos.DrawSphere(newTarget, 0.22f);
+        Gizmos.DrawSphere(newPosition, 0.22f);
 
         // Gizmos.color = Color.green;
         // Gizmos.DrawSphere(castPoint.position, 0.1f);
